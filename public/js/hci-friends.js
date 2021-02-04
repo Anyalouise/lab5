@@ -3,7 +3,15 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
+	$(".click-listener").click(function(e) {
+	console.log("clicked");
+	e.preventDefault();
+	console.log($(this).first().text());
+	$(this).first().find('h3').text(anagrammedName($(this).first().text()));
+});
 })
+
+
 
 /*
  * Function that is called when the document is ready.
